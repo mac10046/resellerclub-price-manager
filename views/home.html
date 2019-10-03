@@ -1,0 +1,305 @@
+<div ng-controller="BaseController">
+    <div ng-controller="HomeController" data-ng-init="init()">
+        <!-- Header -->
+        <div ng-include="'views/header.html'"></div>
+
+        <!-- Main section here -->
+        <div class="dw-main-wrapper">
+            <!-- top section -->
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 dw-vh-center">
+                            <div class="col-sm-8">
+                                <h1>Build Wealth</h1>
+                                <h1>One Basket at a time.</h1>
+                                <p class="dw-sub-head dw-mrg-btm30 text-justify">Profit from investing in our
+                                    <strong>wealthbaskets</strong> that are
+                                    specially curated to give you exposure to select ideas, themes and investment
+                                    styles. Our <strong>wealthbaskets</strong> can help you build your core long-term
+                                    portfolio or create
+                                    exposure to intelligent trading ideas, in a transparent and cost-efficient manner.
+                                </p>
+                                <a class="btn dw-btn-rose dw-btn-rose-default" href="/fund-discovery">Start
+                                    investing</a>
+
+                            </div>
+                            <div class="col-sm-4 text-center dw-ptm30">
+                                <img src="assets/img/dh_start_investing.png" width="285"
+                                    alt="Invest in a transparent, safe, and profitable way">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Connecting you to Investment Opportunities -->
+            <div class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2>We Connect you to Investment Opportunities</h2>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;Investment ideas and opportunities are growing at an accelerated
+                                pace in
+                                India. At Wealthdesk, we create an ecosystem for investors and
+                                institutions, which builds low-cost wealth baskets that come in different shapes and
+                                sizes and
+                                cover multiple themes and sectors. We believe one
+                                size most definitely does not fit all. Therefore we bring baskets for every kind of
+                                investor – active, passive, risk-averse,
+                                risk-seeking, retail, institutional. The platform offers investors an opportunity to
+                                invest in structured
+                                investment products that are built on a foundation of in-depth research and powered by
+                                the latest technologies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- slider -->
+            <!-- <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 dw-vh-center">
+                            <div class="col-sm-12">
+                                <slick class="slides fadein fadeout" data="sliderData" dots="true" ng-if="viewLoaded"
+                                    settings="slickPanels">
+                                    <div class="col-sm-4 dw-home-slider  dw-related-data"
+                                        ng-repeat="view in fundHome track by $index">
+                                        <a ng-href="fund-details/{{view.fundName}}" class="dw-up">
+                                            <div class="slide slide-4 dw-slider-investment dw-related-product"
+                                                style="min-height: 220;">
+                                                <div class="col-sm-6 dw-mrg-btm15">
+                                                    <h6>{{view.displayName}}</h6>
+                                                    <p class="dw-small dw-gray-color">By {{view.entityManager}}</p>
+                                                </div>
+                                                <div class="col-sm-6 dw-mrg-btm15">
+                                                    <img ng-if="view.risk == 'LOW'"
+                                                        class="dw-inline-display dw-risk-icn"
+                                                        src="assets/img/low_risk.png" alt="Risk" width="47">
+                                                    <img ng-if="view.risk == 'MEDIUM'"
+                                                        class="dw-inline-display dw-risk-icn"
+                                                        src="assets/img/medium_risk.png" alt="Risk" width="47">
+                                                    <img ng-if="view.risk == 'HIGH'"
+                                                        class="dw-inline-display dw-risk-icn"
+                                                        src="assets/img/high_risk.png" alt="Risk" width="47">
+                                                    <div class="dw-inline-display">
+                                                        <h5 ng-model="compFundStatus">{{ view.risk }}</h5>
+                                                        <p class="dw-small dw-gray-color">Risk</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-sm-6 dw-mrg-btm10">
+                                                            <h4 ng-model="compFundReturnAmount">{{view.return}}%
+                                                                <img class="dw-mrg-lft15 dw-inline"
+                                                                    src="assets/img/up_green_arrow.png"
+                                                                    alt="Indicates growth" width="15">
+                                                            </h4>
+                                                            <p class="dw-small dw-gray-color"
+                                                                ng-model="compFundReturnYear">1Y Returns</p>
+                                                        </div>
+                                                        <div class="col-sm-6 dw-mrg-top15 dw-mrg-btm10">
+                                                            <h5 ng-model="compFundIvestAmt">&#8377;{{ view.minAmount}} +
+                                                            </h5>
+                                                            <p class="dw-small dw-gray-color"
+                                                                ng-model="compFundInvstType">Monthly Investment</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <p ng-model="compFundDesc">{{view.description | limitTo: 150}} <span
+                                                            class="d-loadMore dw-rose dw-menu">Know More</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </slick>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- Build wealth in 4 steps -->
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-12 text-center dw-mrg-btm50">
+                                <h2 class="dw-mrg-btm20">Build wealth in 4 steps</h2>
+                                <p class="dw-font16">Our app's real virtue lies in the ease of its user-interface and
+                                    navigations.</p>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-3 dw-ptm30">
+                                        <img src="assets/img/dh_invest.png" class="dw-mrg-btm30"
+                                            alt="How much would like to invest." width="25">
+                                        <h4>1. Invest</h4>
+                                        <p class="dw-steps-description">Type in the amount you would like to invest,
+                                            along with the duration of the investment.</p>
+                                    </div>
+                                    <div class="col-sm-3 dw-ptm30">
+                                        <img src="assets/img/dh_pick.png" class="dw-mrg-btm30"
+                                            alt="From the list of Funds, pick the ones." width="24">
+                                        <h4>2. Pick</h4>
+                                        <p class="dw-steps-description">From the list of Funds, pick the ones that
+                                            appeal to your risk appetite the best, along with the duration of the
+                                            investment. </p>
+                                    </div>
+                                    <div class="col-sm-3 dw-ptm30">
+                                        <img src="assets/img/dh_track.png" class="dw-mrg-btm30"
+                                            alt="Track your investment" width="37">
+                                        <h4>3. Track</h4>
+                                        <p class="dw-steps-description">Track your investments and their progress
+                                            quickly and easily.</p>
+                                    </div>
+                                    <div class="col-sm-3 dw-ptm30">
+                                        <img src="assets/img/dh_grow.png" class="dw-mrg-btm30"
+                                            alt="wWatch your wealth grow" width="26">
+                                        <h4>4. Grow</h4>
+                                        <p class="dw-steps-description">Leave your wealth in expert hands and watch your
+                                            wealth grow.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Technology meets wealth building -->
+            <!-- <section class="dw-mrg-btm30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 dw-vh-center">
+                            <div class="col-sm-6">
+                                <h2 class="dw-mrg-btm20 col-sm-10"><div class="row">Technology meets wealth-building.</div></h2>
+                                <p class="dw-sub-head dw-mrg-btm75">Use the sliders to see how much you can earn by investing with WealthTech.</p>
+                                <div class="dw-input-range dw-mrg-btm50">
+                                    <rzslider id="investmentRange" rz-slider-model="investment_range.value" rz-slider-options="investment_range.options"></rzslider><span class="dw-small">Starting Investment: <b class="dw-black dw-font16">&#8377; {{investment_range.value * 1000}}</b></span>
+
+                                </div>
+                                <div class="dw-input-range dw-mrg-btm75">
+                                    <rzslider id="monthlyDepositRange" rz-slider-model="monthly_deposit_range.value" rz-slider-options="monthly_deposit_range.options"></rzslider><span class="dw-small">Monthly Deposit: <b class="dw-black dw-font16">&#8377; {{monthly_deposit_range.value*100}}</b></span>
+                                </div>
+                                <div class="dw-shadow dw-box-wrap">
+                                    <p>When you delay investing by a month, you are <b class="dw-black">losing &#8377;7680 in profit.</b></p>
+                                    <a class="btn dw-btn-rose dw-btn-rose-default dw-mrg-top15" href="/fund-discovery">Start investing</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 dw-ptm30 text-center">
+                                <canvas id="myCanvas" width="500" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- Why should invest -->
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-12 dw-mrg-btm30">
+                                <h2 class="dw-mrg-btm20">Why invest in a Wealthbasket?</h2>
+                                <p class="text-justify">A <strong>wealthbasket</strong> is a basket of stocks which
+                                    adheres to an
+                                    underlying theme. Currently, the Indian market is flooded with products that are
+                                    largely similar in nature and thus, are limited in their ability to provide true
+                                    portfolio diversification. Additionally, due to the current structure of the
+                                    markets, the availability of innovative products is restricted to institutional/UHNI
+                                    investors, leaving retail investors with limited options for portfolio
+                                    diversification. <strong>Wealthbasket</strong> give all investors, irrespective of
+                                    size or
+                                    investment styles, an opportunity to invest in intelligent investment ideas in a low
+                                    cost and transparent manner.</p>
+                            </div>
+                            <div class="col-sm-6 dw-ptm30">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img src="assets/img/diversified.png" alt="diversified range of products"
+                                            class="media-object" width="175">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="dw-mrg-btm15">Build diversified portfolios</h4>
+                                        <p class="text-justify">Baskets spanning across
+                                            themes and ideas that provide long-term secular solutions and
+                                            medium/short-term trading ideas</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 dw-ptm30">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img src="assets/img/gain_exposure-2.png"
+                                            alt="analysing trend with magnify glass" class="media-object" width="175">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="dw-mrg-btm15">Excellent Exposure</h4>
+                                        <p class="text-justify">Gain specific exposure to a sector or a theme or a style
+                                            - each basket is individually curated to give exposure to a select theme or
+                                            idea</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 dw-ptm30">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img src="assets/img/modern_tech.png"
+                                            alt="analysing trend with modern technology" class="media-object"
+                                            width="175">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="dw-mrg-btm15">Powered by modern technology and in-depth research</h4>
+                                        <p class="text-justify">We
+                                            have leveraged technology and the best in industry practices to create
+                                            customised solutions that are available to investors at a compelling cost.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 dw-ptm30">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img src="assets/img/simple_and_easy.png" alt="simple and easy technology"
+                                            class="media-object" width="175">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="dw-mrg-btm15">Simple & easy to transact and monitor</h4>
+                                        <p class="text-justify">A platform is
+                                            completely transparent as the stocks are traded through the investor’s
+                                            broker and held in his/her own demat account.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-offset-3 col-sm-6 dw-ptm30">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <img src="assets/img/secure_and_safe.png" alt="simple and easy technology"
+                                            class="media-object" width="175">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="dw-mrg-btm15">Access to previously inaccessible innovative products
+                                        </h4>
+                                        <p class="text-justify">Specially curated innovative product available to all
+                                            investors, and platform makes sure its safe and secured for everyone.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Invest without risk -->
+            <div ng-include="'views/start-investing.html'"></div>
+        </div>
+        <!-- End main section -->
+
+        <!-- Footer -->
+        <div ng-include="'views/footer.html'"></div>
+    </div>
+</div>
