@@ -1,5 +1,3 @@
-# wealthdesk
-
 Local Development:
 1. If you've previously installed gulp globally, run npm rm --global gulp
 2. Check for node, npm, and npx "node --version" => 8.11.1, "npm --version" => 5.6.0, "npx --version" => 9.7.1
