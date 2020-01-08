@@ -1,25 +1,28 @@
 {
-  "name": "investorwebpanel",
-  "version": "2.0.0",
-  "description": "A platform where investors, broker and adviser's comes together and invested in share markets and mutual funds as per SEBI rules and regulation.",
-  "main": "\u001b ",
-  "scripts": {
-    "test": " "
-  },
-  "repository": {
-    "type": "git",
-    "url": " "
-  },
-  "author": "Wealth Technology & Services Pvt Ltd",
-  "license": "UNLICENSED",
-  "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "connect-modrewrite": "^0.10.2",
-    "del": "^2.2.0",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-rev": "^7.0.0",
-    "gulp-rev-rewrite": "^2.0.0"
-  }
+    "name": "investorwebpanel",
+    "version": "2.0.0",
+    "description": "A platform where investors, broker and adviser's comes together and invested in share markets and mutual funds as per SEBI rules and regulation.",
+    "main": "\u001b ",
+    "scripts": {
+        "test": " "
+    },
+    "repository": {
+        "type": "git",
+        "url": " "
+    },
+    "author": "Wealth Technology & Services Pvt Ltd",
+    "license": "UNLICENSED",
+    "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "connect-modrewrite": "^0.10.2",
+        "del": "^2.2.0",
+        "gulp": "^4.0.2",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-if": "^3.0.0",
+        "gulp-rev": "^7.0.0",
+        "gulp-rev-rewrite": "^2.0.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "yargs": "^15.1.0"
+    }
 }
