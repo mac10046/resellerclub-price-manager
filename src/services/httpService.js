@@ -40,14 +40,11 @@ app.factory('sessionService', [function() {
 app.factory('HttpService', ['$http', '$location', 'config', '$q', 'sessionService',
     function($http, $location, config, $q, sessionService) {
 
-        function removeSession() {
-            sessionService.remove('auth');
-            sessionService.remove('id');
-            sessionService.remove('refresh');
-            sessionService.remove('username');
-            sessionService.remove('expiresIn');
-            sessionService.remove('mode');
-        }
+        var cacheProductCostPrices = undefined;
+        var cacheProductSellingPrices = undefined;
+        var cacheProductPromoPrices = undefined;
+
+        function removeSession() {}
 
         function common_api_error_handler(error) {
             if (error.status == "401" || error.data.message == "The incoming token has expired") {
@@ -82,26 +79,63 @@ app.factory('HttpService', ['$http', '$location', 'config', '$q', 'sessionServic
             }
         }
         var obj = { // Public Methods exposed for Controllers to use.
-            _api_function: function(data) {
+            _product_cost_prices: function(data = {}) {
                 var defer = $q.defer();
-                prepareHttpCall($http, true);
-                $http.post(config.API_ROOT + 'url-path', data)
+                if (cacheProductCostPrices) {
+                    defer.resolve(cacheProductCostPrices);
+                    return defer.promise;
+                }
+                prepareHttpCall(data, $http, true);
+                $http.get(config.API_ROOT + 'api/products/reseller-cost-price.json', data)
                     .then(function(response) {
-                        defer.resolve(response);
+                        cacheProductCostPrices = response.data;
+                        defer.resolve(response.data);
+                    }).catch(function(error) {
+                        defer.reject(returnError(error));
+                    });
+                return defer.promise;
+            },
+            _product_selling_prices: function(data = {}) {
+                var defer = $q.defer();
+                if (cacheProductSellingPrices) {
+                    defer.resolve(cacheProductSellingPrices);
+                    return defer.promise;
+                }
+                prepareHttpCall(data, $http, true);
+                $http.get(config.API_ROOT + 'api/products/customer-price.json', data)
+                    .then(function(response) {
+                        cacheProductSellingPrices = response.data;
+                        defer.resolve(response.data);
+                    }).catch(function(error) {
+                        defer.reject(returnError(error));
+                    });
+                return defer.promise;
+            },
+            _product_promos_prices: function(data = {}) {
+                var defer = $q.defer();
+                if (cacheProductPromoPrices) {
+                    defer.resolve(cacheProductPromoPrices);
+                    return defer.promise;
+                }
+                prepareHttpCall(data, $http, true);
+                $http.get(config.API_ROOT + 'api/resellers/promo-details.json', data)
+                    .then(function(response) {
+                        cacheProductPromoPrices = response.data;
+                        defer.resolve(response.data);
                     }).catch(function(error) {
                         defer.reject(returnError(error));
                     });
                 return defer.promise;
             }
+
         }
 
-        function prepareHttpCall($http, isEndpointAuthenticated) {
+        function prepareHttpCall(data, $http, isEndpointAuthenticated) {
             if (isEndpointAuthenticated) {
-                $http.defaults.headers.common['Authorization'] = sessionService.get("id");
-            } else {
-                $http.defaults.headers.common['Authorization'] = undefined;
+                data['auth-userid'] = config.AUTH_ID;
+                data['api-key'] = config.API_KEY;
             }
-            $http.defaults.headers.common['x-api-key'] = config.API_KEY;
+
             $http.defaults.headers.common['Content-Type'] = config.CONTENT_TYPE;
         }
 
