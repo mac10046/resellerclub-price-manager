@@ -85,7 +85,7 @@ app.factory('HttpService', ['$http', '$location', 'config', '$q', 'sessionServic
             _api_function: function(data) {
                 var defer = $q.defer();
                 prepareHttpCall($http, true);
-                $http.post(config.CLIENT_API_ROOT + 'url-path', data)
+                $http.post(config.API_ROOT + 'url-path', data)
                     .then(function(response) {
                         defer.resolve(response);
                     }).catch(function(error) {
